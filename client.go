@@ -149,7 +149,7 @@ func (c *Client) Order(from, to CryptoCurrency, address string, opts *OrderOptio
 	}
 
 	if statusCode != http.StatusOK {
-		return nil, fmt.Errorf("error: status %d, response: %s", statusCode, string(body))
+		return nil, fmt.Errorf("error: status %d", statusCode)
 	}
 
 	var result *CreateOrderResposnse
@@ -174,7 +174,7 @@ func (c *Client) GetOrder(id string) (*OrderResponse, error) {
 	}
 
 	if statusCode != http.StatusOK {
-		return nil, fmt.Errorf("error: status %d, response: %s", statusCode, string(body))
+		return nil, fmt.Errorf("error: status %d", statusCode)
 	}
 
 	var result *OrderResponse
@@ -199,7 +199,7 @@ func (c *Client) Refund(id string) (*ResultResponse, error) {
 	}
 
 	if statusCode != http.StatusOK {
-		return nil, fmt.Errorf("error: status %d, response: %s", statusCode, string(body))
+		return nil, fmt.Errorf("error: status %d", statusCode)
 	}
 
 	var result *ResultResponse
@@ -224,7 +224,7 @@ func (c *Client) ConfirmRefund(id string) (*ResultResponse, error) {
 	}
 
 	if statusCode != http.StatusOK {
-		return nil, fmt.Errorf("error: status %d, response: %s", statusCode, string(body))
+		return nil, fmt.Errorf("error: status %d", statusCode)
 	}
 
 	var result *ResultResponse
@@ -254,7 +254,7 @@ func (c *Client) RevalidateAddress(id, address string) (*ResultResponse, error) 
 	}
 
 	if statusCode != http.StatusOK {
-		return nil, fmt.Errorf("error: received status code %d, response: %s", statusCode, string(body))
+		return nil, fmt.Errorf("error: received status code %d", statusCode)
 	}
 
 	var result *ResultResponse
@@ -283,7 +283,7 @@ func (c *Client) Remove(id string) (*ResultResponse, error) {
 	}
 
 	if statusCode != http.StatusOK {
-		return nil, fmt.Errorf("error: received status code %d, response: %s", statusCode, string(body))
+		return nil, fmt.Errorf("error: received status code %d", statusCode)
 	}
 
 	var result *ResultResponse
